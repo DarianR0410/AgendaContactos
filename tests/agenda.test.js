@@ -4,14 +4,14 @@ const assert = require('assert');
 const path = require('path');
 const { pathToFileURL } = require('url');
 
-// URL de la app: se abre directamente el index.html (no necesita servidor)
+// para abrir en index.html
 const APP_URL = pathToFileURL(path.resolve(__dirname, '..', 'index.html')).href;
 
-// Pausa (ms) entre acciones para que se vea bien en el video. Ej: SLOW=800 npm test
+// Pausa (ms) : $env:SLOW=1500; npm test
 const SLOW = parseInt(process.env.SLOW || '600', 10);
 const HEADLESS = process.env.HEADLESS === 'true';
 
-// Imagen pequena embebida para no depender de internet
+// Imagen embebida.
 const PIC =
   'data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=';
 
@@ -20,7 +20,7 @@ describe('Agenda - Pruebas CRUD con Selenium WebDriver', function () {
 
   const pause = () => driver.sleep(SLOW);
 
-  // ---------- Helpers ----------
+  /// Helpers 
   async function fillForm({ name, phone, picture = PIC, type }) {
     for (const [id, value] of [['name', name], ['phone', phone], ['picture', picture]]) {
       const el = await driver.findElement(By.id(id));
@@ -64,7 +64,7 @@ describe('Agenda - Pruebas CRUD con Selenium WebDriver', function () {
     return text;
   }
 
-  // ---------- Ciclo de vida ----------
+  //Ciclo de vida 
   before(async function () {
     const options = new chrome.Options();
     options.addArguments('--window-size=1280,900', '--no-sandbox', '--disable-dev-shm-usage');
@@ -87,7 +87,7 @@ describe('Agenda - Pruebas CRUD con Selenium WebDriver', function () {
     if (driver) await driver.quit();
   });
 
-  // ---------- Pruebas ----------
+  /// Pruebas - aqui viene el mambo.. no se si funciona pero con Dios ahi va.
   describe('Carga inicial', function () {
     it('muestra el titulo, el formulario y la lista vacia', async function () {
       assert.strictEqual(await driver.getTitle(), 'Agenda');
