@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" data-bs-theme="primary">
+    <title>Agenda</title>
+    <link rel="stylesheet" href="assets/css/lib/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/site/main.css">
+</head>
+<body>
+    <header>
+<nav class="navbar navbar-expand-lg navbar-light bg-dark" data-bs-theme="dark">
+  <a class="navbar-brand" href="#">Agenda</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+  </div>
+</nav>
+    </header>
+    <main>
+        <div class="container mt-3">
+            <section>
+                <div class="row d-flex justify-content-center">
+                        <div class="col-12 col-sm-4">
+                            <div class="card">
+                                <div class="card-header bg-primary text-light">
+                                    <h5 class="text-center">New contact</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="mb-3">
+                                            <label for="name" class="form-label">Name</label>
+                                            <input type="text" id ="name" class="form-control">
+                                    </div>
+                                        <div class="mb-3">
+                                            <label for="phone" class="form-label">Phone</label>
+                                            <input type="text" id ="phone" class="form-control">
+                                    </div>
+                                            <div class="mb-3">
+                                            <label for="picture" class="form-label">Picture URL</label>
+                                            <input type="text" id ="picture" class="form-control">
+                                    </div>
+                                    <div class="mb-3">
+                                            <label for="contact-type" class="form-label">Contact type:</label>
+                                            <select name="contact-type" id="contact-type" class="form-select">
+                                                <option value="">Select some option</option>
+                                                <option value="Academy">Academy</option>
+                                                <option value="Office">Office</option>
+                                                <option value="Casual">Casual</option>
+                                            </select>
+                                            <div>
+                                                <button id="save-button" onclick="GenerateHtmlContact()" class=" btn btn-outline-primary float-end ms-2 mt-4">Save</button>
+                                                <button id="clear-button" onclick="Clear()" class=" btn btn-outline-warning float-end me-2 mt-4">Clear</button>
+                                            </div>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="row mt-3" id="contact-container">
+                <!-- <div class="col-12 col-sm-3">
+                    <div class="card">
+                        <img class="card-img-top" src="https://placehold.co/300x300" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Trial trial</h5>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Phone numb: 565656565</li>
+                                <li class="list-group-item"> Contact type: Casual</li>
+                            </ul>
+                            <div class="mt-1">
+                                <button  class="btn btn-outline-danger float-end">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+            </section>
+        </div>
+    </main>
+    <footer></footer>  
+    <script src="assets/js/lib/bootstrap/bootstrap.min.js"></script>
+    <script src="assets/js/site/index/index.js"></script>
+</body>
+</html>

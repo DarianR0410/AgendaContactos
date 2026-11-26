@@ -1,0 +1,13 @@
+{
+  "name": "agendajs-selenium-tests",
+  "version": "1.0.0",
+  "description": "Pruebas automatizadas con Selenium WebDriver para la aplicacion AgendaJS (CRUD de contactos)",
+  "scripts": {
+    "test": "mocha tests/agenda.test.js --timeout 30000",
+    "test:headless": "HEADLESS=true mocha tests/agenda.test.js --timeout 30000"
+  },
+  "devDependencies": {
+    "mocha": "^10.7.0",
+    "selenium-webdriver": "^4.25.0"
+  }
+}
